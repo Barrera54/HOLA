@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% load static %}
+    <link rel="stylesheet"  type ="text/css" href="{% static 'style.css' %}">
+</head>
+
+<body>
+    <form method="POST" action="/emp">
+        {% csrf_token %}
+        <div class="inicio">
+            <br>
+            <p>
+                <h3 div class="detallles">Farmacia Barrera</h3>
+            </p>
+            <div class="se">
+                <p> medicamento Id:</p>{{ form.eid }}
+            </div>
+            <div class="a">
+                <p> Name medicamento</p>{{ form.ename }}
+            </div>
+            <div class="va">
+                <p>contacto</p>{{ form.eemail }}
+            </div>
+            <div class="ir">
+                <p>cantidad</p>{{ form.econtact }}
+            </div>
+            <div class="v">
+            <p>lugar de entrega</p>{{form.lugarr}}
+        </div >
+        <div class="yu">
+            <p>cedula del usuario</p>{{form.cedulaa}}
+        </div>
+        <div class="tu">
+            
+            <p>Numero de usuario</p>{{form.usuarioo}}
+        </div>
+        
+        
+                <button type="submit">enviar</button>
+            </div>
+        </div>
+        
+    </form>
+</body>
+
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Record</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th> ID medicamento</th>
+                <th> Name medicamento</th>
+                <th>contacto</th>
+                <th>cantidad</th>
+                <th>lugar</th>
+                <th>cedula</th>
+                <th>N-usuario</th>
+               
+            </tr>
+        </thead>
+        <tbody>
+            {% for employee in employees %}
+            <tr>
+                <td>{{ employee.eid }}</td>
+                <td>{{employee.ename}}</td>
+                <td>{{employee.eemail}}</td>
+                <td>{{employee.econtact}}</td>
+                <td>{{employee.lugarr}}</td>
+                <td>{{employee.cedulaa}}</td>
+                <td>{{employee.usuarioo}}</td>
+                <td></td>
+                <td>
+                    <a href="/edit/{{ employee.id }}">Edit</a>
+                    <a href="/delete/{{employee.id}}">Delete</a>
+                </td>
+            </tr>
+
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <br>
+    <br>
+    <button><a style="color:black;" href="/emp">Agregar datos</a></button>
+    
+</body>
+
+</html>
